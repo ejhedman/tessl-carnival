@@ -1694,6 +1694,20 @@ export interface Cloud {
   speed: number;
 }
 
+/** The sun, low in the hazy sky, with a soft glow round it. */
+export function drawSun(ctx: Ctx, x: number, y: number) {
+  ctx.fillStyle = palette.sunGlow;
+  for (const r of [46, 34]) {
+    ctx.beginPath();
+    ctx.arc(x, y, r, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  ctx.fillStyle = palette.sun;
+  ctx.beginPath();
+  ctx.arc(x, y, 24, 0, Math.PI * 2);
+  ctx.fill();
+}
+
 export function drawCloud(ctx: Ctx, x: number, y: number, size: number) {
   ctx.fillStyle = palette.cloud;
   ctx.beginPath();

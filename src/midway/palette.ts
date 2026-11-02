@@ -8,11 +8,13 @@ const { colors } = theme;
  * uses live here.
  */
 export const palette = {
-  sky: '#38b4e6',
-  skyHigh: '#1f9bd6',
-  cloud: '#bfeafc',
-  cloudShade: '#94d8f4',
-  haze: '#5fc3b8',
+  sky: '#f7b267',
+  skyHigh: '#e8793a',
+  sun: '#fff1b8',
+  sunGlow: 'rgba(255, 214, 120, 0.35)',
+  cloud: '#fde3c4',
+  cloudShade: '#f5c79a',
+  haze: '#f2a65a',
 
   grass: '#a5c43a',
   grassDark: '#8aab2a',
