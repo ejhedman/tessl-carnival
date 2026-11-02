@@ -12,6 +12,7 @@ import {
   drawField,
   drawGroundLayer,
   drawProp,
+  drawSun,
   drawWalker,
   groundBounds,
   HORIZON,
@@ -261,7 +262,7 @@ export function startMidway(canvas: HTMLCanvasElement, options: MidwayOptions): 
   };
 
   const draw = (t: number) => {
-    // The sky, and clouds drifting slowly behind the midway.
+    // The sky, the sun, and clouds drifting slowly behind the midway.
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     const horizon = (HORIZON - camera.y) * zoom;
     const sky = ctx.createLinearGradient(0, horizon - 260 * zoom, 0, horizon);
@@ -271,6 +272,7 @@ export function startMidway(canvas: HTMLCanvasElement, options: MidwayOptions): 
     ctx.fillRect(0, 0, canvas.clientWidth, Math.max(0, horizon + 2));
 
     ctx.setTransform(dpr * zoom, 0, 0, dpr * zoom, 0, 0);
+    drawSun(ctx, view.w * 0.78, HORIZON - camera.y - 120);
     const span = view.w + 200;
     for (const cloud of clouds) {
       const x =
